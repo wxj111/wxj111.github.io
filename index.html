@@ -172,7 +172,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。</p>
+        <p><strong>题目：</strong>实现 <code>int sqrt(int x)</code> 函数。</p>
+<p>计算并返回 <em>x</em> 的平方根，其中 <em>x</em> 是非负整数。</p>
+<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: 8</span><br><span class="line">输出: 2</span><br><span class="line">说明: 8 的平方根是 2.82842..., </span><br><span class="line">     由于返回类型是整数，小数部分将被舍去。</span><br></pre></td></tr></table></figure>
+<p><strong>解</strong>：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。</p>
 <p>牛顿迭代公式：$x_n=x_{n-1}-f(x_{n-1})/f’(x_{n-1})$</p>
 <p>此处$f(x)=x^2-a$, $a$就是要开方的数。</p>
         

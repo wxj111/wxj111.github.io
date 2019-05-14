@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>test：Leetcode--x的平方根（使用牛顿迭代法） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。 牛顿迭代公式：$x_n=x_{n-1}-f(x_{n-1})/f’(x_{n-1})$ 此处$f(x)=x^2-a$, $a$就是要开方的数。">
+  <meta name="description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 12输入: 4输出: 2 示例 2: 1234输入: 8输出: 2说明: 8 的平方根是 2.82842...,      由于返回类型是整数，小数部分将被舍去。 解：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test：Leetcode--x的平方根（使用牛顿迭代法）">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。 牛顿迭代公式：$x_n=x_{n-1}-f(x_{n-1})/f’(x_{n-1})$ 此处$f(x)=x^2-a$, $a$就是要开方的数。">
+<meta property="og:description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 12输入: 4输出: 2 示例 2: 1234输入: 8输出: 2说明: 8 的平方根是 2.82842...,      由于返回类型是整数，小数部分将被舍去。 解：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-03T09:18:27.029Z">
+<meta property="og:updated_time" content="2019-05-06T01:34:18.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test：Leetcode--x的平方根（使用牛顿迭代法）">
-<meta name="twitter:description" content="看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。 牛顿迭代公式：$x_n=x_{n-1}-f(x_{n-1})/f’(x_{n-1})$ 此处$f(x)=x^2-a$, $a$就是要开方的数。">
+<meta name="twitter:description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 12输入: 4输出: 2 示例 2: 1234输入: 8输出: 2说明: 8 的平方根是 2.82842...,      由于返回类型是整数，小数部分将被舍去。 解：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -175,11 +175,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。</p>
+        <p><strong>题目：</strong>实现 <code>int sqrt(int x)</code> 函数。</p>
+<p>计算并返回 <em>x</em> 的平方根，其中 <em>x</em> 是非负整数。</p>
+<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: 8</span><br><span class="line">输出: 2</span><br><span class="line">说明: 8 的平方根是 2.82842..., </span><br><span class="line">     由于返回类型是整数，小数部分将被舍去。</span><br></pre></td></tr></table></figure>
+<p><strong>解</strong>：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。</p>
 <p>牛顿迭代公式：$x_n=x_{n-1}-f(x_{n-1})/f’(x_{n-1})$</p>
 <p>此处$f(x)=x^2-a$, $a$就是要开方的数。</p>
 <a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">1</span>) <span class="keyword">return</span> x;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> xn=x;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> xn_1=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">abs</span>(xn-xn_1)&gt;=<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            xn_1=xn;</span><br><span class="line">            xn=(xn+x/xn)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) xn;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：假设你正在爬楼梯。需要 <em>n</em> 阶你才能到达楼顶。</p>
+<p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<p><strong>注意：</strong>给定 <em>n</em> 是一个正整数。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入： 2</span><br><span class="line">输出： 2</span><br><span class="line">解释： 有两种方法可以爬到楼顶。</span><br><span class="line">1.  1 阶 + 1 阶</span><br><span class="line">2.  2 阶</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入： 3</span><br><span class="line">输出： 3</span><br><span class="line">解释： 有三种方法可以爬到楼顶。</span><br><span class="line">1.  1 阶 + 1 阶 + 1 阶</span><br><span class="line">2.  1 阶 + 2 阶</span><br><span class="line">3.  2 阶 + 1 阶</span><br></pre></td></tr></table></figure>
+<p><strong>解：</strong>这道题乍一看我想到了排列组合，但是我往后多列了几项之后，发现它是一个斐波那契数列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1  1  2  3  5  8  13  21  34  ......</span><br></pre></td></tr></table></figure>
+<p>$fib[i]=fib[i-1]+fib[i-2]$</p>
+<p>仔细一想，其实第i项，就等于第i-1项加一阶或者第i-2项加两阶。</p>
+<p>具体代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> *fib=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        fib[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">        fib[<span class="number">2</span>]=<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            fib[i]=fib[i<span class="number">-1</span>]+fib[i<span class="number">-2</span>];</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fib[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>写法2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int climbStairs(int n) &#123;</span><br><span class="line">        if(n==1) return 1;</span><br><span class="line">        if(n==2) return 2;</span><br><span class="line">        int i_1=2,i_2=1,i=0;</span><br><span class="line">        while(n&gt;2)</span><br><span class="line">        &#123;</span><br><span class="line">            i=i_1+i_2;</span><br><span class="line">            i_2=i_1;</span><br><span class="line">            i_1=i;</span><br><span class="line">            n--;</span><br><span class="line">        &#125;</span><br><span class="line">        return i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
 
