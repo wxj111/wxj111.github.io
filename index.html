@@ -237,28 +237,60 @@
 
 
   
-    <article id="post-cJSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-The-cJSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/20/cJSON/">cJSON 读书笔记</a>
+      <a class="article-title" href="/2019/04/20/The-cJSON/">The cJSON</a>
     </h1>
   
 
         
-        <a href="/2019/04/20/cJSON/" class="archive-article-date">
-  	<time datetime="2019-04-20T06:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
+        <a href="/2019/04/20/The-cJSON/" class="archive-article-date">
+  	<time datetime="2019-04-20T13:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>参考资料1：<a href="http://www.json.org/json-zh.html" target="_blank" rel="noopener">http://www.json.org/json-zh.html</a></p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
+        <p>说好的不到1000行，然后架不住一个函数就占一行</p>
+<p>说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。</p>
+<h3 id="第一章-JSON介绍"><a href="#第一章-JSON介绍" class="headerlink" title="第一章  JSON介绍"></a>第一章  JSON介绍</h3><p><strong>JSON</strong>(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standard  ECMA-262 3rd Edition - December 1999的一个子集。</p>
+<p><strong>for example</strong>:  </p>
+<p> JSON :       {“code\”:true,\”msg\”:\”\u8bf7\u767b\u5f55\”,\”data\”:{ }}</p>
+<p>解析后：</p>
+<p>{<br>        “code”: true,<br>        “msg”:  “请登录”,<br>        “data”: {<br>}<br>}</p>
+<p>JSON采用完全独立于语言的文本格式，但是也使用了类似于C语言家族的习惯（包括C, C++, C#, Java, JavaScript, Perl, Python等）。这些特性使JSON成为理想的数据交换语言。</p>
+<p>JSON建构于两种结构：</p>
+<ul>
+<li>“名称/值”对的集合（A collection of name/value pairs）。不同的语言中，它被理解为<em>对象（object）</em>，纪录（record），结构（struct），字典（dictionary），哈希表（hash table），有键列表（keyed list），或者关联数组 （associative array）。 </li>
+<li>值的有序列表（An ordered list of values）。在大部分语言中，它被理解为数组（array）。</li>
+</ul>
+<p>JSON具有以下这些形式：</p>
+<p><strong>对象</strong>是一个无序的“‘名称/值’对”集合。一个对象以“{”（左括号）开始，“}”（右括号）结束。每个“名称”后跟一个“:”（冒号）；“‘名称/值’对” 之间使用“,”（逗号）分隔。下面用一个图来表示：</p>
+<p><img src="/2019/04/20/The-cJSON/object.png" alt="object"></p>
+<p><strong>数组</strong>是值（value）的有序集合。一个数组以“[”（左中括号）开始，“]”（右中括号）结束。值之间使用“,”（逗号）分隔。</p>
+<p><img src="/2019/04/20/The-cJSON/array.png" alt="array"></p>
+<p>其中的<strong>值</strong>可以是双引号括起来的字符串（<em>string</em>）、数值(number)、<code>true</code>、<code>false</code>、 <code>null</code>、对象（object）或者数组（array）。这些结构可以嵌套。</p>
+<p><img src="/2019/04/20/The-cJSON/value.png" alt="value"></p>
+<p><strong>字符串</strong>（<em>string</em>）是由双引号包围的任意数量Unicode字符的集合，使用反斜线转义。一个字符（character）即一个单独的字符串（character string）。</p>
+<p><img src="/2019/04/20/The-cJSON/string.png" alt="string"></p>
+<p><strong>数值</strong>(number)的表示：</p>
+<p><img src="/2019/04/20/The-cJSON/number.png" alt="number"></p>
+<p><a href="http://www.json.org/json-zh.html" target="_blank" rel="noopener">参考资料</a></p>
+<h3 id="第二章-代码介绍"><a href="#第二章-代码介绍" class="headerlink" title="第二章  代码介绍"></a>第二章  代码介绍</h3><p>在第一章中，介绍了JSON值的数据类型，在头文件中，也有定义（这里的话，可以定义一个全局变量枚举来实现）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* cJSON Types: */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_False 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_True 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_NULL 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_Number 3</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_String 4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_Array 5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_Object 6</span></span><br><span class="line">	</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_IsReference 256</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_StringIsConst 512</span></span><br></pre></td></tr></table></figure>
+<p><strong>JSON的结构</strong></p>
+<p>在这里，每一个“‘名称/值’对”集合都被创建为一个 cJSON类型的结构体。先建立一个根cJSON结构，同级的就用next 和 prev双向链表来存储，下一级的就存到child里面。</p>
+<p>从代码里面可以看出来，一共把 值 分为了4种 ，NULL、sting、int、double。这里true、false都归为string.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* The cJSON structure: */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">cJSON</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">cJSON</span> *<span class="title">next</span>,*<span class="title">prev</span>;</span>	<span class="comment">/* 同一级元素使用双向链表存储   */</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">cJSON</span> *<span class="title">child</span>;</span>		<span class="comment">/* An array or object item will have a child pointer pointing to a chain of the items in the array/object. */</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> type;					<span class="comment">/* The type of the item, as above. */</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> *valuestring;			<span class="comment">/* The item's string, if type==cJSON_String */</span></span><br><span class="line">	<span class="keyword">int</span> valueint;				<span class="comment">/* The item's number, if type==cJSON_Number */</span></span><br><span class="line">	<span class="keyword">double</span> valuedouble;			<span class="comment">/* The item's number, if type==cJSON_Number */</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> *<span class="built_in">string</span>;				<span class="comment">/* The item's name string, if this item is the child of, or is in the list of subitems of an object.‘名称/值’对中的名称 */</span></span><br><span class="line">&#125; cJSON;</span><br></pre></td></tr></table></figure>
+<p><strong>内存管理</strong></p>
+<p>malloc ，在堆区分配一块指定大小的内存空间，用来存放数据。这块内存空间在函数执行完成后不会被初始化，它们的值是未知的。</p>
+<p>free ，该函数释放 address 所指向的内存块,释放的是动态分配的内存空间。</p>
 <h2 id="last"><a href="#last" class="headerlink" title="last"></a>last</h2><p>finish</p>
 
       
@@ -272,7 +304,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/20/cJSON/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/20/The-cJSON/">展开全文 >></a>
         </p>
       
 
