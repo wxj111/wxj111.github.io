@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>The cJSON | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="img{     width: 70%;     padding-left: 15%; }   说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。 第一章  JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standa">
+  <meta name="description" content="说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。 第一章  JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standard  ECMA-262 3rd Edition - December 1999的一个子集。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The cJSON">
 <meta property="og:url" content="http://yoursite.com/2019/04/20/The-cJSON/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="img{     width: 70%;     padding-left: 15%; }   说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。 第一章  JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standa">
+<meta property="og:description" content="说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。 第一章  JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standard  ECMA-262 3rd Edition - December 1999的一个子集。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/04/20/The-cJSON/object.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/20/The-cJSON/array.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/20/The-cJSON/value.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/20/The-cJSON/string.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/20/The-cJSON/number.png">
-<meta property="og:updated_time" content="2019-05-22T07:02:33.363Z">
+<meta property="og:updated_time" content="2019-05-22T07:23:09.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The cJSON">
-<meta name="twitter:description" content="img{     width: 70%;     padding-left: 15%; }   说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。 第一章  JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standa">
+<meta name="twitter:description" content="说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。 第一章  JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standard  ECMA-262 3rd Edition - December 1999的一个子集。">
 <meta name="twitter:image" content="http://yoursite.com/2019/04/20/The-cJSON/object.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -180,14 +180,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <style>
-img{
-    width: 70%;
-    padding-left: 15%;
-}
-</style>
-
-<p>说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。</p>
+        <p>说好的不到1000行，然而架不住一个函数就占一行，这是我看到代码的第一感觉。。。。</p>
 <h3 id="第一章-JSON介绍"><a href="#第一章-JSON介绍" class="headerlink" title="第一章  JSON介绍"></a>第一章  JSON介绍</h3><p><strong>JSON</strong>(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。它基于JavaScript Programming Language, Standard  ECMA-262 3rd Edition - December 1999的一个子集。</p>
 <a id="more"></a>
 <p><strong>for example</strong>:  </p>
@@ -202,15 +195,15 @@ img{
 </ul>
 <p>JSON具有以下这些形式：</p>
 <p><strong>对象</strong>是一个无序的“‘名称/值’对”集合。一个对象以“{”（左括号）开始，“}”（右括号）结束。每个“名称”后跟一个“:”（冒号）；“‘名称/值’对” 之间使用“,”（逗号）分隔。下面用一个图来表示：</p>
-<p><img src="/2019/04/20/The-cJSON/object.png" alt="object"></p>
+<p><img src="/2019/04/20/The-cJSON/object.png" width="60%" height="60%"></p>
 <p><strong>数组</strong>是值（value）的有序集合。一个数组以“[”（左中括号）开始，“]”（右中括号）结束。值之间使用“,”（逗号）分隔。</p>
-<p><img src="/2019/04/20/The-cJSON/array.png" alt="array"></p>
+<p><img src="/2019/04/20/The-cJSON/array.png" width="60%" height="60%"></p>
 <p>其中的<strong>值</strong>可以是双引号括起来的字符串（<em>string</em>）、数值(number)、<code>true</code>、<code>false</code>、 <code>null</code>、对象（object）或者数组（array）。这些结构可以嵌套。</p>
-<p><img src="/2019/04/20/The-cJSON/value.png" alt="value"></p>
+<p><img src="/2019/04/20/The-cJSON/value.png" width="60%" height="60%"></p>
 <p><strong>字符串</strong>（<em>string</em>）是由双引号包围的任意数量Unicode字符的集合，使用反斜线转义。一个字符（character）即一个单独的字符串（character string）。</p>
-<p><img src="/2019/04/20/The-cJSON/string.png" alt="string"></p>
+<p><img src="/2019/04/20/The-cJSON/string.png" width="60%" height="60%"></p>
 <p><strong>数值</strong>(number)的表示：</p>
-<p><img src="/2019/04/20/The-cJSON/number.png" alt="number"></p>
+<p><img src="/2019/04/20/The-cJSON/number.png" width="60%" height="60%"></p>
 <p><a href="http://www.json.org/json-zh.html" target="_blank" rel="noopener">参考资料</a></p>
 <h3 id="第二章-代码介绍"><a href="#第二章-代码介绍" class="headerlink" title="第二章  代码介绍"></a>第二章  代码介绍</h3><p>在第一章中，介绍了JSON值的数据类型，在头文件中，也有定义（这里的话，可以定义一个全局变量枚举来实现）：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* cJSON Types: */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_False 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_True 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_NULL 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_Number 3</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_String 4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_Array 5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_Object 6</span></span><br><span class="line">	</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_IsReference 256</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> cJSON_StringIsConst 512</span></span><br></pre></td></tr></table></figure>
