@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test：Leetcode--x的平方根（使用牛顿迭代法） | Hexo</title>
+  <title>test：Leetcode--x的平方根（使用牛顿迭代法）、爬楼梯 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 12输入: 4输出: 2 示例 2: 1234输入: 8输出: 2说明: 8 的平方根是 2.82842...,      由于返回类型是整数，小数部分将被舍去。 解：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛">
+  <meta name="description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test：Leetcode--x的平方根（使用牛顿迭代法）">
+<meta property="og:title" content="test：Leetcode--x的平方根（使用牛顿迭代法）、爬楼梯">
 <meta property="og:url" content="http://yoursite.com/2019/04/30/test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 12输入: 4输出: 2 示例 2: 1234输入: 8输出: 2说明: 8 的平方根是 2.82842...,      由于返回类型是整数，小数部分将被舍去。 解：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛">
+<meta property="og:description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-14T11:55:16.907Z">
+<meta property="og:updated_time" content="2019-05-22T06:41:46.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test：Leetcode--x的平方根（使用牛顿迭代法）">
-<meta name="twitter:description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。 示例 1: 12输入: 4输出: 2 示例 2: 1234输入: 8输出: 2说明: 8 的平方根是 2.82842...,      由于返回类型是整数，小数部分将被舍去。 解：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛">
+<meta name="twitter:title" content="test：Leetcode--x的平方根（使用牛顿迭代法）、爬楼梯">
+<meta name="twitter:description" content="题目：实现 int sqrt(int x) 函数。 计算并返回 x 的平方根，其中 x 是非负整数。 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test：Leetcode--x的平方根（使用牛顿迭代法）
+      test：Leetcode--x的平方根（使用牛顿迭代法）、爬楼梯
     </h1>
   
 
@@ -178,6 +178,7 @@
         <p><strong>题目：</strong>实现 <code>int sqrt(int x)</code> 函数。</p>
 <p>计算并返回 <em>x</em> 的平方根，其中 <em>x</em> 是非负整数。</p>
 <p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<a id="more"></a>
 <p>示例 1:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
 <p>示例 2:</p>
@@ -185,7 +186,6 @@
 <p><strong>解</strong>：看到题目首先想到的是二分法，后来翻了一下评论，发现原来牛顿迭代法才是真爱，可算是数值分析没有白学，于是用牛顿迭代法做了一下。在控制迭代精度$ x_n-x_{n-1}$时，是按照四舍五入来限制了一下。</p>
 <p>牛顿迭代公式：$x_n=x_{n-1}-f(x_{n-1})/f’(x_{n-1})$</p>
 <p>此处$f(x)=x^2-a$, $a$就是要开方的数。</p>
-<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">1</span>) <span class="keyword">return</span> x;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> xn=x;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> xn_1=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">abs</span>(xn-xn_1)&gt;=<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            xn_1=xn;</span><br><span class="line">            xn=(xn+x/xn)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) xn;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>题目</strong>：假设你正在爬楼梯。需要 <em>n</em> 阶你才能到达楼顶。</p>
 <p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
@@ -305,6 +305,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/05/22/epoll-工作模式-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          epoll 工作模式
+        
+      </div>
+    </a>
   
   
     <a href="/2019/04/20/The-cJSON/" id="article-nav-older" class="article-nav-link-wrap">
