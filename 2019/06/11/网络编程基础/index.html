@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一个非常重要并且需要了解的概念是 文件描述符 。 那么，什么是文件描述符呢？ 一个文件描述符是一个正整数， 当一个进程打开一个存在的文件，创建一个新文件或创建一个新的套接字的时候，内核返回一个正整数给进程，这个正整数就是文件描述符。 你可能听说过，在 UNIX 中一切皆文件。 内核通过文件描述符来索引一个进程打开的文件。 当你需要读或写一个文件时，你需要用文件描述符来标记它。 Python 给了你">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-19T14:43:45.742Z">
+<meta property="og:updated_time" content="2019-07-19T14:47:31.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程基础">
 <meta name="twitter:description" content="一个非常重要并且需要了解的概念是 文件描述符 。 那么，什么是文件描述符呢？ 一个文件描述符是一个正整数， 当一个进程打开一个存在的文件，创建一个新文件或创建一个新的套接字的时候，内核返回一个正整数给进程，这个正整数就是文件描述符。 你可能听说过，在 UNIX 中一切皆文件。 内核通过文件描述符来索引一个进程打开的文件。 当你需要读或写一个文件时，你需要用文件描述符来标记它。 Python 给了你">
@@ -180,6 +180,7 @@
 <p>在本地可以通过进程PID来唯一标识一个进程，但是在网络中这是行不通的。但是TCP/IP协议族已经帮我们解决了这个问题，网络层的“<strong>ip地址</strong>”可以唯一标识网络中的主机，而传输层的“<strong>协议+端口</strong>”可以唯一标识主机中的应用程序（进程）。这样利用三元组（ip地址，协议，端口）就可以标识网络的进程了，网络中的进程通信就可以利用这个标志与其它进程进行交互。</p>
 <p>使用TCP/IP协议的应用程序通常采用应用编程接口：UNIX  BSD的套接字（socket）来实现网络进程之间的通信。</p>
 <p><strong>socket是“open—write/read—close”模式的一种实现</strong></p>
+<a id="more"></a>
 <p><strong>2.创建套接字 </strong></p>
 <p>socket函数对应于普通文件的打开操作。</p>
 <p>（使用协议PROTOCOL在域DOMAIN中创建TYPE类型的新套接字。 如果PROTOCOL为零，则自动选择一个。 返回新套接字的文件描述符，或者返回-1表示错误。）</p>
@@ -509,7 +510,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,7 +518,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++、排序算法</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,7 +530,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++、排序算法</a>
               </li>
             
             <div class="clearfix"></div>
