@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/4 | Hexo</title>
+  <title>面经 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/04/index.html">
+  <meta name="description" content="指针和引用的区别：  指针是指向地址，而引用是某个变量的别名。 指针在运行时，它所指向的值可以被改变，也可以为空。但是引用一旦和某个对象绑定后，就不能在被改变。 从内存分配角度看，程序一定会为指针变量分配内存空间，但是标准没有规定引用一定要被分配内存空间，是否分配主要看编译器。但是引用在声明时一定要初始化，且指向对象不能为空值。 使用引用比指针要安全一些。从编译上看，程序在编译时分别将指针和引用添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面经">
+<meta property="og:url" content="http://yoursite.com/2019/07/20/面经/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="指针和引用的区别：  指针是指向地址，而引用是某个变量的别名。 指针在运行时，它所指向的值可以被改变，也可以为空。但是引用一旦和某个对象绑定后，就不能在被改变。 从内存分配角度看，程序一定会为指针变量分配内存空间，但是标准没有规定引用一定要被分配内存空间，是否分配主要看编译器。但是引用在声明时一定要初始化，且指向对象不能为空值。 使用引用比指针要安全一些。从编译上看，程序在编译时分别将指针和引用添">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-20T09:09:17.375Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="面经">
+<meta name="twitter:description" content="指针和引用的区别：  指针是指向地址，而引用是某个变量的别名。 指针在运行时，它所指向的值可以被改变，也可以为空。但是引用一旦和某个对象绑定后，就不能在被改变。 从内存分配角度看，程序一定会为指针变量分配内存空间，但是标准没有规定引用一定要被分配内存空间，是否分配主要看编译器。但是引用在声明时一定要初始化，且指向对象不能为空值。 使用引用比指针要安全一些。从编译上看，程序在编译时分别将指针和引用添">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,190 +154,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-面经" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面经
+    </h1>
+  
+
+        
+        <a href="/2019/07/20/面经/" class="archive-article-date">
+  	<time datetime="2019-07-20T07:52:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>指针和引用的区别：</strong></p>
+<ol>
+<li>指针是指向地址，而引用是某个变量的别名。</li>
+<li>指针在<strong>运行</strong>时，它所指向的值可以被改变，也可以为空。但是引用一旦和某个对象绑定后，就不能在被改变。</li>
+<li>从<strong>内存分配</strong>角度看，程序一定会为指针变量分配内存空间，但是标准没有规定引用一定要被分配内存空间，是否分配主要看编译器。但是引用在声明时一定要初始化，且指向对象不能为空值。</li>
+<li>使用引用比指针要<strong>安全</strong>一些。从编译上看，程序在编译时分别将指针和引用添加到<strong>符号表</strong>上，符号表上记录的是变量名及变量所对应地址。指针变量在符号表上对应的地址值为指针变量的地址值，而<strong>引用</strong>在符号表上对应的地址值为<strong>引用对象的地址值</strong>。符号表生成后就不会再改，因此指针可以改变指向的对象（指针变量中的值可以改），而引用对象不能改。</li>
+<li>引用效率会相对高一些。因为引用不会指向空值，使用在使用引用之前不需要检查他的合法性。而指针要防止其非空。</li>
+<li>理论上，指针的级数没有限制，而引用只有一级。</li>
+<li>引用没有const（它本来就是），指针有const，const的指针不可变。</li>
+</ol>
+<p><strong>C和C++的区别</strong></p>
+<ol>
+<li><p>c时面向过程的编程，而c++时面向对象的编程。</p>
+</li>
+<li><p>语法上：C++具有封装、继承、多态三种特性；</p>
+<p>C++相比C，增加了许多类型安全的功能，比如类型强制转换等</p>
+<p>C++支持范式编程，比如模板类、函数模板等。</p>
+</li>
+</ol>
+<p><strong>面向对象和面向过程有什么区别</strong></p>
+<ol>
+<li><p>面向过程是一种<strong>以事件为中心</strong>的编程思想，编程的时候把解决问题的步骤分析出来，然后用函数把这些步骤实现，在一步一步的具体步骤中再按顺序调用函数。</p>
+</li>
+<li><p>面向对象是一种<strong>以“对象”为中心</strong>的编程思想，把要解决的问题分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个对象在整个解决问题的步骤中的属性和行为。</p>
+</li>
+<li><p>面向对象是以功能来划分问题，而不是以步骤解决。</p>
+</li>
+<li><p>面向过程的优缺点：</p>
+<p>流程化使得编程任务明确，便于节点分析； 效率高。</p>
+<p>但是代码重用率较低，后期维护困难。</p>
+</li>
+<li><p>面向对象：  </p>
+<p>结构清晰、易扩展、可继承、更加符合人类思维方式，容维护</p>
+<p>开销大，性能低</p>
+</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/23/The-cJSON-2/" class="archive-article-date">
-  	<time datetime="2019-04-23T09:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/23/The-cJSON-2/">The cJSON(2)</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/20/面经/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/The-cJSON/" class="archive-article-date">
-  	<time datetime="2019-04-20T13:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/12/Linux-关于防火墙与端口的配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux 关于防火墙ufw与端口的配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/The-cJSON/">The cJSON（1）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C语言 JSON解析器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/test/" class="archive-article-date">
-  	<time datetime="2019-04-16T07:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/test/">test：Leetcode--x的平方根（使用牛顿迭代法）、爬楼梯</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/浅析哈希表/" class="archive-article-date">
-  	<time datetime="2019-04-15T07:25:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/浅析哈希表/">浅析哈希表&amp;C++简单实现</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-04-14T05:57:59.093Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -356,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
