@@ -16,7 +16,7 @@
 <meta property="og:description" content="指针和引用的区别：  指针是指向地址，而引用是某个变量的别名。 指针在运行时，它所指向的值可以被改变，也可以为空。但是引用一旦和某个对象绑定后，就不能在被改变。 从内存分配角度看，程序一定会为指针变量分配内存空间，但是标准没有规定引用一定要被分配内存空间，是否分配主要看编译器。但是引用在声明时一定要初始化，且指向对象不能为空值。 使用引用比指针要安全一些。从编译上看，程序在编译时分别将指针和引用添">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/07/20/面经/C++内存分配图.png">
-<meta property="og:updated_time" content="2019-07-25T14:01:58.030Z">
+<meta property="og:updated_time" content="2019-07-25T15:05:23.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面经">
 <meta name="twitter:description" content="指针和引用的区别：  指针是指向地址，而引用是某个变量的别名。 指针在运行时，它所指向的值可以被改变，也可以为空。但是引用一旦和某个对象绑定后，就不能在被改变。 从内存分配角度看，程序一定会为指针变量分配内存空间，但是标准没有规定引用一定要被分配内存空间，是否分配主要看编译器。但是引用在声明时一定要初始化，且指向对象不能为空值。 使用引用比指针要安全一些。从编译上看，程序在编译时分别将指针和引用添">
@@ -194,6 +194,23 @@
 <li><p>主要区别是C++具有封装、继承、多态三种特性；</p>
 <p>C++相比C，增加了许多类型安全的功能，比如类型强制转换等</p>
 <p>C++支持范式编程，比如模板类、函数模板等。</p>
+<p><strong>多态</strong></p>
+<p>用一个函数名定义多个不同的函数，调用同一个名字的函数，执行不同的操作。</p>
+<p>编译时的多态：通过重载的方式实现。</p>
+<p>运行时的多态：通过虚函数来实现。</p>
+<p><strong>继承</strong></p>
+<p>继承允许我们依据另一个类来定义一个类，这使得创建和维护一个应用程序变得更容易。这样做，也达到了重用代码功能和提高执行时间的效果。</p>
+<p><strong>继承类型</strong></p>
+<p>当一个类派生自基类，该基类可以被继承为 <strong>public、protected</strong> 或 <strong>private</strong> 几种类型。继承类型是通过上面讲解的访问修饰符 access-specifier 来指定的。</p>
+<p>我们几乎不使用 <strong>protected</strong> 或 <strong>private</strong> 继承，通常使用 <strong>public</strong> 继承。当使用不同类型的继承时，遵循以下几个规则：</p>
+<ul>
+<li><strong>公有继承（public）：</strong>当一个类派生自<strong>公有</strong>基类时，基类的<strong>公有</strong>成员也是派生类的<strong>公有</strong>成员，基类的<strong>保护</strong>成员也是派生类的<strong>保护</strong>成员，基类的<strong>私有</strong>成员不能直接被派生类访问，但是可以通过调用基类的<strong>公有</strong>和<strong>保护</strong>成员来访问。</li>
+<li><strong>保护继承（protected）：</strong> 当一个类派生自<strong>保护</strong>基类时，基类的<strong>公有</strong>和<strong>保护</strong>成员将成为派生类的<strong>保护</strong>成员。</li>
+<li><strong>私有继承（private）：</strong>当一个类派生自<strong>私有</strong>基类时，基类的<strong>公有</strong>和<strong>保护</strong>成员将成为派生类的<strong>私有</strong>成员。</li>
+<li>虚继承：<a href="https://www.cnblogs.com/xien7/archive/2013/03/12/2954364.html" target="_blank" rel="noopener">https://www.cnblogs.com/xien7/archive/2013/03/12/2954364.html</a>主要解决多继承产生的冲突问题，类似于：C继承于A，B，但是A，B中都有int s;所以C该继承哪个的问题。</li>
+</ul>
+<p><strong>封装</strong></p>
+<p>封装可以隐藏实现细节，使得代码模块化；封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。<strong>在面向对象编程上可理解为：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏。</strong></p>
 </li>
 </ol>
 <p><strong>面向对象和面向过程有什么区别</strong></p>
@@ -312,6 +329,11 @@
 </li>
 </ol>
 <p><a href="https://blog.csdn.net/jason_cuijiahui/article/details/79202438" target="_blank" rel="noopener">参考1</a>   <a href="https://blog.csdn.net/u010458863/article/details/48594931" target="_blank" rel="noopener">参考2</a></p>
+<p><strong>ThreadLocal有什么用</strong></p>
+<p>简单说ThreadLocal就是一种以空间换时间的做法，在每个Thread里面维护了一个以开地址法实现的ThreadLocal.ThreadLocalMap，把数据进行隔离，数据不共享，自然就没有线程安全方面的问题了</p>
+<p><strong>进程和线程间通信方式的比较</strong></p>
+<p>进程间的几种通信方式：管道、有名管道、信号、信号量、套接字、消息队列、共享内存。</p>
+<p>线程：锁机制、信号量机制、信号机制</p>
 
       
 
@@ -533,6 +555,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
@@ -541,19 +567,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++、排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
               </li>
             
             <div class="clearfix"></div>
