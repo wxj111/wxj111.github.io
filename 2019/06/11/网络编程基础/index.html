@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一个非常重要并且需要了解的概念是 文件描述符 。 那么，什么是文件描述符呢？ 一个文件描述符是一个正整数， 当一个进程打开一个存在的文件，创建一个新文件或创建一个新的套接字的时候，内核返回一个正整数给进程，这个正整数就是文件描述符。 你可能听说过，在 UNIX 中一切皆文件。 内核通过文件描述符来索引一个进程打开的文件。 当你需要读或写一个文件时，你需要用文件描述符来标记它。 Python 给了你">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-19T14:47:31.781Z">
+<meta property="og:updated_time" content="2019-08-29T07:26:18.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络编程基础">
 <meta name="twitter:description" content="一个非常重要并且需要了解的概念是 文件描述符 。 那么，什么是文件描述符呢？ 一个文件描述符是一个正整数， 当一个进程打开一个存在的文件，创建一个新文件或创建一个新的套接字的时候，内核返回一个正整数给进程，这个正整数就是文件描述符。 你可能听说过，在 UNIX 中一切皆文件。 内核通过文件描述符来索引一个进程打开的文件。 当你需要读或写一个文件时，你需要用文件描述符来标记它。 Python 给了你">
@@ -269,6 +269,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">int close(int fd);</span><br></pre></td></tr></table></figure>
 <p>close一个TCP socket的缺省行为时把该socket标记为以关闭，然后立即返回到调用进程。该描述字不能再由调用进程使用，也就是说不能再作为read或write的第一个参数。</p>
 <p>注意：close操作只是使相应socket描述字的引用计数-1，只有当引用计数为0的时候，才会触发TCP客户端向服务器发送终止连接请求。</p>
+<ul>
+<li>- </li>
+</ul>
 
       
 
@@ -510,11 +513,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,10 +530,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++、排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">

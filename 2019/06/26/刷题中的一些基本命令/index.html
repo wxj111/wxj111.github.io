@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>刷题中的一些基本命令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于vector：  二维数组vector&amp;lt;vector&amp;gt; array的大小 行row=array.size(); 列column=array[i].size(); 判断是否为空： array.enpty();    数组num 判断数组的长度：int length = sizeof(num) / sizeof(num[0]); 行列数: lines = sizeof(a) / siz">
+  <meta name="description" content="关于vector：  二维数组vector&amp;lt;vector&amp;gt; array的大小 行row=array.size(); 列column=array[i].size(); 判断是否为空： array.enpty(); vector 的排序，去重操作   123sort(x.begin(),x.end());vector&amp;lt;int&amp;gt; ::iterator ite=unique(x.b">
 <meta name="keywords" content="vector">
 <meta property="og:type" content="article">
 <meta property="og:title" content="刷题中的一些基本命令">
 <meta property="og:url" content="http://yoursite.com/2019/06/26/刷题中的一些基本命令/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于vector：  二维数组vector&amp;lt;vector&amp;gt; array的大小 行row=array.size(); 列column=array[i].size(); 判断是否为空： array.enpty();    数组num 判断数组的长度：int length = sizeof(num) / sizeof(num[0]); 行列数: lines = sizeof(a) / siz">
+<meta property="og:description" content="关于vector：  二维数组vector&amp;lt;vector&amp;gt; array的大小 行row=array.size(); 列column=array[i].size(); 判断是否为空： array.enpty(); vector 的排序，去重操作   123sort(x.begin(),x.end());vector&amp;lt;int&amp;gt; ::iterator ite=unique(x.b">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T07:51:08.536Z">
+<meta property="og:updated_time" content="2019-07-27T14:34:29.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刷题中的一些基本命令">
-<meta name="twitter:description" content="关于vector：  二维数组vector&amp;lt;vector&amp;gt; array的大小 行row=array.size(); 列column=array[i].size(); 判断是否为空： array.enpty();    数组num 判断数组的长度：int length = sizeof(num) / sizeof(num[0]); 行列数: lines = sizeof(a) / siz">
+<meta name="twitter:description" content="关于vector：  二维数组vector&amp;lt;vector&amp;gt; array的大小 行row=array.size(); 列column=array[i].size(); 判断是否为空： array.enpty(); vector 的排序，去重操作   123sort(x.begin(),x.end());vector&amp;lt;int&amp;gt; ::iterator ite=unique(x.b">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -181,8 +181,10 @@
 <p>行row=array.size();</p>
 <p>列column=array[i].size();</p>
 <p>判断是否为空： array.enpty();</p>
+<p><strong>vector<int> 的排序，去重操作</int></strong></p>
 </li>
 </ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sort(x.begin(),x.end());</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ::iterator ite=unique(x.begin(),x.end());</span><br><span class="line">x.erase(ite,x.end());</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><p>数组num</p>
 <p>判断数组的长度：int length = sizeof(num) / sizeof(num[0]);</p>
@@ -441,11 +443,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,10 +460,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++、排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
