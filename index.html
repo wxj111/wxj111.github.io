@@ -175,7 +175,24 @@
         <h2 id="智能车"><a href="#智能车" class="headerlink" title="智能车"></a>智能车</h2><p>刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；<br>测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；<br>计算中线固定权值，改为根据速度变化的滑动权值<br>等等</p>
 <p>优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；</p>
 <p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567053874345.png" alt="1567053874345"></p>
-<h2 id="一些面试中的题目"><a href="#一些面试中的题目" class="headerlink" title="一些面试中的题目"></a>一些面试中的题目</h2><h2 id="C-相关知识"><a href="#C-相关知识" class="headerlink" title="C++相关知识"></a>C++相关知识</h2><h4 id="指针和引用的区别："><a href="#指针和引用的区别：" class="headerlink" title="指针和引用的区别："></a>指针和引用的区别：</h4><ol>
+<h2 id="一些面试中的题目"><a href="#一些面试中的题目" class="headerlink" title="一些面试中的题目"></a>一些面试中的题目</h2><p> TCP什么流     </p>
+<p>cookie和session的区别</p>
+<p>HTTP报文结构</p>
+<p>状态码</p>
+<p>请求转发，重定向</p>
+<p>进程间的通信方式有哪些</p>
+<p>Http与Https的区别</p>
+<p>b+和红黑树的区别</p>
+<p>拥塞控制知道吗？是什么？怎么实现？拥塞窗口？是叫拥塞窗口吗？</p>
+<p>啥叫面向连接？</p>
+<p>APR协议  RPC协议</p>
+<p>OSI七层是哪七层，交换机在哪一层</p>
+<p>多路复用</p>
+<p>01背包 完全背包，两种动态规划经典例题</p>
+<p>vector 与 list 、dueue的区别</p>
+<p><a href="https://blog.csdn.net/qq_32164245/article/details/80518717" target="_blank" rel="noopener">https://blog.csdn.net/qq_32164245/article/details/80518717</a></p>
+<h2 id="C-相关知识"><a href="#C-相关知识" class="headerlink" title="C++相关知识"></a>C++相关知识</h2><p>sizeof 是在编译时确定的。例如：memset（dp, 0，sizeof dp）;在一定程度上可以认为sizeof dp 是常量。</p>
+<h4 id="指针和引用的区别："><a href="#指针和引用的区别：" class="headerlink" title="指针和引用的区别："></a>指针和引用的区别：</h4><ol>
 <li><p>指针是指向地址，而引用是某个变量的别名。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>;;</span><br><span class="line"><span class="keyword">int</span> &amp;pa = a;</span><br><span class="line">pa = b;       <span class="comment">//此时 a=2,b=2,pa=2;这就是别名的意思</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -196,7 +213,7 @@
 <li><p>执行++操作时不一样。</p>
 </li>
 </ol>
-<h4 id="C和C-的区别"><a href="#C和C-的区别" class="headerlink" title="C和C++的区别"></a><strong>C和C++的区别</strong></h4><ol>
+<h4 id="高效使用vector"><a href="#高效使用vector" class="headerlink" title="高效使用vector/"></a><a href="http://senlinzhan.github.io/2015/03/31/C-使用vector的正确姿势/" target="_blank" rel="noopener">高效使用vector/</a></h4><h4 id="C和C-的区别"><a href="#C和C-的区别" class="headerlink" title="C和C++的区别"></a><strong>C和C++的区别</strong></h4><ol>
 <li><p>c时面向过程的编程，而c++时面向对象的编程。</p>
 </li>
 <li><p>主要区别是C++具有封装、继承、多态三种特性；</p>
@@ -300,6 +317,51 @@
 <p>③如果  【函数的返回值&gt;8个字节】，则返回值通过产生的临时量带回。</p>
 <p>6、函数结束ret指令干了两件事：先出栈；再将出栈的值放到CPU的PC寄存器中。因为PC寄存器中永远放的是下一次执行指令的地址，所以就顺理成章的在函数调用完之后依旧接着原来的代码继续执行。</p>
 <p><a href="https://blog.csdn.net/zhuoya_/article/details/80516246" target="_blank" rel="noopener">原文链接</a></p>
+<h4 id="虚函数以及虚表"><a href="#虚函数以及虚表" class="headerlink" title="虚函数以及虚表"></a>虚函数以及虚表</h4><p>虚函数的实现机制：主要是通过虚表和虚指针来实现的。每个类有一个虚表，每个对象有一个虚指针（*_vptr）。</p>
+<p>虚表是一个指针数组，其元素是指向虚函数的指针，每个元素对应一个<strong>虚函数</strong>的<strong>函数指针</strong>。</p>
+<p>虚函数指针的赋值发生在<strong>编译器的编译阶段，也就是说在代码的编译阶段，虚表就可以构造出来了</strong>。（这里需要注意 运行时的多态是通过虚函数实现的，编译时的多态是通过重载实现的。）</p>
+<p>虚表是属于类的，而不是属于某个具体的对象，一个类只需要一个虚表即可。同一个类的所有对象都使用同一个虚表。（eg: class a{};   a A; a B    A和B是使用同一个虚表）；为了指定对象的虚表，对象内部包含一个虚表的指针，来指向自己所使用的虚表。* _vptr</p>
+<p>“对象的虚表指针用来指向自己所属类的虚表，虚表中的指针会指向其继承的<strong>最近的一个类的虚函数</strong>”</p>
+<p><a href="https://songlee24.github.io/2014/09/02/cpp-virtual-table/" target="_blank" rel="noopener">参考文献</a>  （<a href="https://blog.csdn.net/haoel/article/details/1948051" target="_blank" rel="noopener">https://blog.csdn.net/haoel/article/details/1948051</a>）</p>
+<h4 id="构造函数和析构函数中能否调用虚函数？"><a href="#构造函数和析构函数中能否调用虚函数？" class="headerlink" title="构造函数和析构函数中能否调用虚函数？"></a>构造函数和析构函数中能否调用虚函数？</h4><p>构造函数跟析构函数里面都可以调用虚函数，编译器不会报错。</p>
+<ol>
+<li><p>C++ primer中说到最好别用</p>
+</li>
+<li><p>由于类的构造次序是由基类到派生类，所以在构造函数中调用虚函数，虚函数是不会呈现出多态的</p>
+</li>
+<li><p>类的析构是从派生类到基类，当调用继承层次中某一层次的类的析构函数时意味着其派生类部分已经析构掉，所以也不会呈现多态<br>因此如果在基类中声明的纯虚函数并且在基类的析构函数中调用之，编译器会发生错误。</p>
+</li>
+</ol>
+<p>   原文链接：<a href="https://blog.csdn.net/to_xidianhph_youth/article/details/39134801" target="_blank" rel="noopener">https://blog.csdn.net/to_xidianhph_youth/article/details/39134801</a></p>
+<h4 id="delete-this"><a href="#delete-this" class="headerlink" title="delete this"></a>delete this</h4><p>delete this 就是将自己删除，相当于自杀。但是 this 必须是new分配的对象。</p>
+<p>在执行delete this 之后，不能访问该对象的任何成员变量以及虚函数。（delete 是将数据回收，包括虚表和数据成员，不包括函数代码）</p>
+<p>delete this函数后，就不能再访问this指针了。</p>
+<p>this 的析构函数中，不能使用delete this；因为会陷入嵌套。从而变成无限循环。</p>
+<p>嵌套是因为： delete操作的执行步骤是：先调用    p的~Lizi()    然后调用   operator delete ；所以。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Lizi p;</span><br><span class="line"></span><br><span class="line">~Lizi()</span><br><span class="line">&#123;</span><br><span class="line">	delete this;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/nie2314550441/article/details/76880711" target="_blank" rel="noopener">很长很长，但是后面自己写的在瞎说</a></p>
+<p><a href="https://blog.csdn.net/kuimzzs/article/details/81517451" target="_blank" rel="noopener">参考二，弥补后面瞎说的那块</a></p>
+<h4 id="关于内存对齐以及struct"><a href="#关于内存对齐以及struct" class="headerlink" title="关于内存对齐以及struct"></a>关于内存对齐以及struct</h4><p>内存对齐的原因：（通常都是以四字节为一个内存单位）</p>
+<p><strong>平台原因</strong>：各个硬件平台对存储空间的处理上有很大的不同。一些平台对某些特定类型的数据只能从某些特定地址开始存取。————- 比如，有些架构的CPU在访问 一个没有进行对齐的变量的时候会发生错误，那么在这种架构下编程必须保证字节对齐。</p>
+<p><strong>性能原因</strong>：内存对齐可以提高存取效率。————- 比如，有些平台每次读都是从偶地址开始，如果一个int型（假设为32位系统）如果存放在偶地址开始的地方，那么一个读周期就可以读出这32bit，而如果存放在奇地址开始的地方，就需要2个读周期，并对两次读出的结果的高低字节进行拼凑才能得到该32bit数据。</p>
+<p><strong>struct 对其规则：</strong></p>
+<p>每个特定平台上的编译器都有自己的默认“对齐系数”（也叫对齐模数）。你可以通过预编译命令<code>#pragma pack(n)</code>，n=1,2,4,8,16 来改变这一系数，其中 n 就是你要指定的“对齐系数”。</p>
+<p><strong>1）概念：</strong></p>
+<p><strong>有效对齐值</strong>：是 <code>#pragma pack</code>指定值 和 结构体中最长数据类型长度 中<strong>较小</strong>的那个。有效对齐值也叫<strong>对齐单位</strong>。</p>
+<p>注意：VS、VC 默认是#pragma pack(8)，而 gcc 默认是#pragma pack(4)，并且gcc只支持1，2，4对齐。</p>
+<p><strong>2）规则：</strong></p>
+<ol>
+<li><p>结构体变量的<strong>首地址</strong>是有效对齐值（对齐单位）的整数倍。</p>
+</li>
+<li><p>结构体第一个成员的<strong>偏移量（offset）</strong>为0，以后每个成员相对于<strong>结构体首地址</strong>的 offset 都是<strong>该成员大小与有效对齐值中较小那个</strong>的整数倍，如有需要编译器会在成员之间加上填充字节。</p>
+</li>
+<li><p><strong>结构体的总大小</strong>为 有效对齐值 的<strong>整数倍</strong>，如有需要编译器会在最末一个成员之后加上填充字节。</p>
+</li>
+<li><p>结构体内类型相同的连续元素将在连续的空间内，和数组一样。</p>
+<p>（用下面的例子理解一下第二点）</p>
+<p><img src="/2019/07/20/面经/内存对齐.png" width="80%" height="80%"></p>
+</li>
+</ol>
 <h2 id="操作系统知识"><a href="#操作系统知识" class="headerlink" title="操作系统知识"></a>操作系统知识</h2><h4 id="内存分配（上面是大地址，下面是小地址）"><a href="#内存分配（上面是大地址，下面是小地址）" class="headerlink" title="内存分配（上面是大地址，下面是小地址）"></a><strong>内存分配（上面是大地址，下面是小地址）</strong></h4><p><img src="/2019/07/20/面经/C++内存分配图.png" width="60%" height="60%"></p>
 <ol>
 <li><p>栈区</p>
@@ -343,6 +405,7 @@
 <p>dmesg -C     clear the kernel ring buffer</p>
 <p>所以存满了可以通过-c来清除（个人理解）</p>
 <p><a href="https://linux.cn/article-3587-1.html" target="_blank" rel="noopener">参考自</a></p>
+<h4 id="cache（高速缓冲存储器）"><a href="#cache（高速缓冲存储器）" class="headerlink" title="cache（高速缓冲存储器）"></a>cache（高速缓冲存储器）</h4><p>高速缓冲存储器是存在于主存与CPU之间的一级存储器， 由静态存储芯片(SRAM)组成，容量比较小但速度比主存高得多， 接近于CPU的速度。 Cache的功能是用来存放那些近期需要运行的指令与数据（缓存cpu频繁使用的数据）。目的是提高CPU对存储器的访问速度，避免每次从较慢的内存中读取。（结构：cpu&gt;cache&gt;memory）</p>
 <h4 id="CPU的多级缓存的目的？"><a href="#CPU的多级缓存的目的？" class="headerlink" title="CPU的多级缓存的目的？"></a><strong>CPU的多级缓存的目的？</strong></h4><ol>
 <li><p>cpu缓存是位于CPU与内存之间的临时存储器，它的容量比内存小的多，但是交换速度却比内存要快得多。       </p>
 </li>
@@ -356,7 +419,6 @@
 </li>
 </ol>
 <p><a href="https://juejin.im/entry/57b6a0bcc4c9710055800afe" target="_blank" rel="noopener">参考自</a></p>
-<h4 id="cache（高速缓冲存储器）"><a href="#cache（高速缓冲存储器）" class="headerlink" title="cache（高速缓冲存储器）"></a>cache（高速缓冲存储器）</h4><p>高速缓冲存储器是存在于主存与CPU之间的一级存储器， 由静态存储芯片(SRAM)组成，容量比较小但速度比主存高得多， 接近于CPU的速度。 Cache的功能是用来存放那些近期需要运行的指令与数据（缓存cpu频繁使用的数据）。目的是提高CPU对存储器的访问速度，避免每次从较慢的内存中读取。</p>
 <h4 id="高并发、多线程的任务处理，使用单核处理器怎么优化？-仿照进程的优化"><a href="#高并发、多线程的任务处理，使用单核处理器怎么优化？-仿照进程的优化" class="headerlink" title="高并发、多线程的任务处理，使用单核处理器怎么优化？(仿照进程的优化)"></a>高并发、多线程的任务处理，使用单核处理器怎么优化？(仿照进程的优化)</h4><ol>
 <li><p>降低线程（进程）切换所需的时间。</p>
 <p>线程切换时一般经过保存现场、挑选下一个线程、恢复现场。保存现场和恢复现场在软件方面可优化的空间不太大，但是在硬件方面可以进一步进行优化，例如：增加多个寄存器（不计成本），切换线程时候直接切换寄存器。另一个是设计硬件的保存现场和恢复现场的操作，系统调用一个命令之后直接硬件执行。挑选下一个线程上，可以优化线程调度算法，这也是优化的关键。</p>
@@ -366,6 +428,12 @@
 <h4 id="ThreadLocal有什么用"><a href="#ThreadLocal有什么用" class="headerlink" title="ThreadLocal有什么用"></a><strong>ThreadLocal有什么用</strong></h4><p>简单说ThreadLocal就是一种以空间换时间的做法，在每个Thread里面维护了一个以开地址法实现的ThreadLocal.ThreadLocalMap，把数据进行隔离，数据不共享，自然就没有线程安全方面的问题了</p>
 <h4 id="进程和线程间通信方式的比较"><a href="#进程和线程间通信方式的比较" class="headerlink" title="进程和线程间通信方式的比较"></a><strong>进程和线程间通信方式的比较</strong></h4><p>进程间的几种通信方式：管道、有名管道、信号、信号量、套接字、消息队列、共享内存。</p>
 <p>线程：锁机制、信号量机制、信号机制</p>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全就是多线程访问时，采用了加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问直到该线程读取完，其他线程才可使用。不会出现数据不一致或者数据污染。</p>
+<p>线程安全问题都是由<a href="http://baike.baidu.com/view/261041.htm" target="_blank" rel="noopener">全局变量</a>及<a href="http://baike.baidu.com/view/675642.htm" target="_blank" rel="noopener">静态变量</a>引起的。</p>
+<p>若每个线程中对<a href="http://baike.baidu.com/view/261041.htm" target="_blank" rel="noopener">全局变量</a>、<a href="http://baike.baidu.com/view/675642.htm" target="_blank" rel="noopener">静态变量</a>只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑<a href="http://baike.baidu.com/view/6501899.htm" target="_blank" rel="noopener">线程同步</a>，否则的话就可能影响线程安全。</p>
+<p>不可变的对象一定是线程安全的。</p>
+<p>有条件的线程安全类对于单独的操作可以是线程安全的，但是某些操作序列可能需要外部同步。<strong>条件线程安全</strong>的最常见的例子是遍历由 Hashtable 或者 Vector 或者返回的<a href="http://baike.baidu.com/view/925158.htm" target="_blank" rel="noopener">迭代器</a> – 由这些类返回的 fail-fast 迭代器假定在迭代器进行遍历的时候底层集合不会有变化。</p>
+<p>为了保证其他线程不会在遍历的时候改变集合，进行迭代的线程应该确保它是独占性地访问集合以实现遍历的完整性。通常，独占性的访问是由对锁的同步保证的 – 并且类的文档应该说明是哪个锁(通常是对象的内部<a href="http://baike.baidu.com/view/45702.htm" target="_blank" rel="noopener">监视器</a>(intrinsic monitor))。</p>
 <h4 id="c-函数本地静态互斥体是否线程安全？"><a href="#c-函数本地静态互斥体是否线程安全？" class="headerlink" title="c++ 函数本地静态互斥体是否线程安全？"></a><strong>c++ 函数本地静态互斥体是否线程安全？</strong></h4><p>安全。这样做的原因是任何具有静态存储持续时间(✓检查)的变量都是使用常量表达式初始化的(其中constexpr构造函数的调用被明确地认为是这样的–✓检查),是常量初始化的,这是一个子集静态初始化.所有静态初始化都严格在所有动态初始化之前发生,因此在第一次调用函数之前. (<a href="javascript:void(" target="_blank" rel="noopener">basic.start.static/2</a>))</p>
 <p>这适用于std :: mutex,因为std :: mutex只有一个可行的构造函数,默认构造函数,并且它被指定为constexpr. (<a href="javascript:void(" target="_blank" rel="noopener">thread.mutex.class</a>))</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="built_in">std</span> &#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">mutex</span> &#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">constexpr</span> <span class="title">mutex</span><span class="params">()</span> <span class="keyword">noexcept</span></span>;</span><br><span class="line">    ~mutex();</span><br><span class="line"></span><br><span class="line">    mutex(<span class="keyword">const</span> mutex&amp;) = <span class="keyword">delete</span>;</span><br><span class="line">    mutex&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> mutex&amp;) = <span class="keyword">delete</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">lock</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">try_lock</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">unlock</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> native_handle_type = implementation-defined; <span class="comment">// See [thread.req.native]</span></span><br><span class="line">    <span class="function">native_handle_type <span class="title">native_handle</span><span class="params">()</span></span>;                <span class="comment">// See [thread.req.native]</span></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -380,12 +448,28 @@
 <p><a href="https://blog.csdn.net/pmt123456/article/details/53544295" target="_blank" rel="noopener">参考自2</a></p>
 <h4 id="MMU内存管理单元、分页"><a href="#MMU内存管理单元、分页" class="headerlink" title="MMU内存管理单元、分页"></a>MMU内存管理单元、分页</h4><p>MMU主要用来管理虚拟存储器、物理存储器的控制路线，同时也负责将<strong>虚拟地址映射为物理地址</strong>，以及提供硬件机制的内存访问授权、多任务多进程操作系统。</p>
 <h5 id="概念1：虚拟存储器"><a href="#概念1：虚拟存储器" class="headerlink" title="概念1：虚拟存储器"></a>概念1：<strong>虚拟存储器</strong></h5><p>虚拟存储器的基本思想是：程序，数据，堆栈的总大小可以超过内存空间的大小。操作系统会将当前运行的部分保存在内存中，剩余的部分保存在磁盘中，并在需要的时候交换程序代码。</p>
-<p>32位处理器的地址集合为：0x0000 0000 - 0xffff ffff（4G=（32bit）*（32bit））。这个范围称为虚拟地址空间，其对应的地址称为虚拟地址。</p>
-<p>物理地址只是虚拟地址的一个子集，</p>
+<p>32位处理器的地址集合为：0x0000 0000 - 0xffff ffff（4G=2的32次）。这个范围称为虚拟地址空间，其对应的地址称为虚拟地址。</p>
+<p>物理地址只是虚拟地址的一个子集</p>
+<p>在x86_64下面，其实虚拟地址只使用了<strong>48位</strong>。所以C程序里，打印的地址都是只有12位16进制。48位地址长度也就是对应了256TB（2的48次）的地址空间。</p>
 <p>例如：32bit，内存为256M，的物理地址空间范围是0 ~ 0x0fff ffff(256M)，其虚拟地址空间是0 ~ 0xffffffff(4GB)</p>
 <p>大多数使用MMU的机器都采用<strong>分页机制</strong>。虚拟地址空间以<strong>页</strong>为单位进行划分，而相应的物理地址空间也被划分，其使用的单位称为<strong>页帧</strong>，页帧和页必须保持相同，因为<strong>内存与外部存储器之间的传输是以页为单位进行传输的</strong>。</p>
 <p>虚拟内存的哪个页面映射到物理内存的哪个页帧是通过<strong>页表（Page Table）</strong>来描述的，页表保存在<strong>物理内存中</strong>，<strong>MMU会查找页表来确定一个VA应该映射到什么PA。</strong></p>
 <p><a href="https://www.jianshu.com/p/abb4b5aeb83b" target="_blank" rel="noopener">具体见此</a></p>
+<h4 id="虚拟内存的好处"><a href="#虚拟内存的好处" class="headerlink" title="虚拟内存的好处"></a>虚拟内存的好处</h4><ol>
+<li><p>保证读写内存的安全性。</p>
+<p>因为物理内存中，是没有访问限制的，任何地址都可以访问。但是操作系统要求不同的页面要有不同的访问限制的，是利用CPU模式和MMU内存保护机制来实现的。</p>
+</li>
+<li><p>虚拟内存管理最主要的作用是让每个进程有自己独立的地址空间。</p>
+<p>所谓独立的地址空间是指，不同进程中的同一个VA被MMU映射到不同的PA,并且在某一个进程中访问任何地址都不可能访问到另外一个进程的数据，这样使得任何一个进程由于执行错误指令或恶意代码导致的非法内存访问都不会意外改写其它进程的数据，不会影响其它进程的运行，从而保证整个系统的稳定性。另一方面，每个进程都认为自己独占整个虚拟地址空间，这样链接器和加载器的实现会比较容易，不必考虑各进程的地址范围是否冲突。</p>
+</li>
+<li><p>VA到PA的映射会给分配和释放内存带来方便</p>
+<p>物理地址不连续的几块内存可以映射成虚拟地址连续的一块内存。比如要用malloc分配一块很大的内存空间，虽然有足够多的空闲物理内存，却没有足够大的连续空闲内存，这时就可以分配多个不连续的物理页面而映射到连续的虚拟地址范围。</p>
+</li>
+<li><p>一个系统如果同时运行着很多进程，为各进程分配的内存之和可能会大于实际可用的物理内存，虚拟内存管理使得这种情况下各进程仍然能够正常运行</p>
+<p>因为各进程分配的只不过是虚拟内存的页面，这些页面的数据可以映射到物理页面，也可以临时保存到磁盘上而不占用物理页面，在磁盘上临时保存虚拟内存页面的可能是一个磁盘分区，也可能是一个磁盘文件，称为交换设备（Swap Device）。当物理内存不够用时，将一些不常用的物理页面中的数据临时保存到交换设备，然后这个物理页面就认为是空闲的了，可以重新分配给进程使用，这个过程称为换出（Pageout）。如果进程要用到被换出的页面，就从交换设备再加载回物理内存，这称为换入（Pagein）。换出和换入操作统称为换页（Paging）</p>
+</li>
+</ol>
+<p><a href="https://blog.csdn.net/Tommy_wxie/article/details/8668406" target="_blank" rel="noopener">参考文献</a></p>
 <h5 id="内存保护机制"><a href="#内存保护机制" class="headerlink" title="内存保护机制"></a>内存保护机制</h5><ol>
 <li>处理器一般有<strong>用户模式（User Mode）</strong>和<strong>特权模式（privileged Mode）</strong>之分。操作系统可以在页表中设置每个页表访问权限，有些页表不可以访问，有些页表只能在特权模式下访问，有些页表在用户模式和特权模式下都可以访问，同时，访问权限又分为<strong>可读</strong>、<strong>可写</strong>和<strong>可执行</strong>三种。这样设定之后，当CPU要访问一个VA（Virtual Address）时，<strong>MMU</strong>会检查CPU当前处于用户模式还是特权模式，访问内存的目的是读数据、写数据还是取指令执行，<strong>如果与操作系统设定的权限相符，则允许访问，把VA转换成PA，否则不允许执行，产生异常（Exception）</strong>。</li>
 </ol>
@@ -393,7 +477,7 @@
 <p>通常操作系统会将<strong>虚拟地址空间</strong>划分为<strong>用户空间</strong>和<strong>内核空间</strong>。例如x86平台的linux系统的虚拟地址空间范围是0x0000 0000 ~ 0xffff ffff，前3G的空间为用户空间，后1G的空间为内核空间。<strong>用户程序加载到用户空间，内核程序加载到内核空间，用户程序不能访问内核中的数据，也不能跳转到内核空间执行。</strong>这样可以保护内核，如果一个进程访问了非法地址，顶多就是这个进程崩溃，而不会影响到内核和系统的稳定性。在系统发生中断或异常时，不仅会跳转到中断或异常服务函数中执行，而且还会从用户模式切换到特权模式，从中断或异常服务程序跳转到内核代码中执行。</p>
 <p><strong>总结一下：在正常情况下处理器在用户模式执行用户程序，在中断或异常情况下处理器切换到特权模式执行内核程序，处理完中断或异常之后再返回用户模式继续执行用户程序。</strong></p>
 <p><a href="https://www.jianshu.com/p/abb4b5aeb83b" target="_blank" rel="noopener">具体见此</a></p>
-<h4 id="fork（）函数-与-vfork-函数"><a href="#fork（）函数-与-vfork-函数" class="headerlink" title="fork（）函数 与 vfork()函数"></a>fork（）函数 与 vfork()函数</h4><p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1566977025600.png" alt="1566977025600"></p>
+<h4 id="fork（）函数-与-vfork-函数"><a href="#fork（）函数-与-vfork-函数" class="headerlink" title="fork（）函数 与 vfork()函数"></a>fork（）函数 与 vfork()函数</h4><p><img src="/2019/07/20/面经/fork函数.png" width="90%" height="60%"></p>
 <h4 id="进程-线程"><a href="#进程-线程" class="headerlink" title="进程 线程"></a>进程 线程</h4><ul>
 <li><p>进程 </p>
 </li>
@@ -434,6 +518,16 @@
 <li><p>死锁的检测和解除</p>
 </li>
 </ol>
+<h4 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h4><p>在如果某个系统支持两个或者多个动作（Action）<strong>同时存在</strong>，那么这个系统就是一个<strong>并发系统</strong>。如果某个系统支持两个或者多个动作<strong>同时执行</strong>，那么这个系统就是一个<strong>并行系统</strong>。并发系统与并行系统这两个定义之间的关键差异在于<strong>“存在”</strong>这个词。</p>
+<p>在并发程序中可以同时拥有两个或者多个线程。这意味着，如果程序在单核处理器上运行，那么这两个线程将交替地换入或者换出内存。这些线程是同时“存在”的——每个线程都处于执行过程中的某个状态。如果程序能够并行执行，那么就一定是运行在多核处理器上。此时，程序中的每个线程都将分配到一个独立的处理器核上，因此可以同时运行。</p>
+<p>我相信你已经能够得出结论——<strong>“并行”概念是“并发”概念的一个子集</strong>。也就是说，你可以编写一个拥有多个线程或者进程的并发程序，但如果没有多核处理器来执行这个程序，那么就不能以并行方式来运行代码。因此，凡是在求解单个问题时涉及多个执行流程的编程模式或者执行行为，都属于并发编程的范畴。</p>
+<p>链接：<a href="https://www.zhihu.com/question/33515481/answer/105348019" target="_blank" rel="noopener">https://www.zhihu.com/question/33515481/answer/105348019</a></p>
+<h4 id="进程阻塞，挂起"><a href="#进程阻塞，挂起" class="headerlink" title="进程阻塞，挂起"></a>进程阻塞，挂起</h4><p>进程阻塞： 是一种被动进入的状态，发生在请求IO或者等待IO等操作中。是进程等待资源而得不到引起的等待。</p>
+<p>进程挂起：是一种主动进入的状态。是系统层面对进程做出的合理操作。挂起的标志就是换出到外存，在外存的进程肯定是不能执行的，所以挂起的目的就很明显，在内存资源不足时，需要把一些进程换出到外存，给着急运行的进程腾地方。挂起倾向于换出阻塞态的进程，也可以是就绪态的进程。</p>
+<p><img src="/2019/07/20/面经/进程阻塞_挂起.png" width="70%" height="70%"></p>
+<p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1568046633759.png" alt="1568046633759"></p>
+<h4 id="访问虚拟内存的步骤"><a href="#访问虚拟内存的步骤" class="headerlink" title="访问虚拟内存的步骤"></a>访问虚拟内存的步骤</h4><p>进程执行时，当需要访问虚拟地址中存放的值时，步骤如下：<br>1)CPU会先找到虚拟地址所在的虚拟页(VP3)，根据页表，找出页表中对应的值。<br>判断有效位，为1，DRMA缓存命中，获根据物理页号，找到物理页中的内容，返回。<br>2)若有效位为0，产生缺页异常，调用内核缺页异常处理程序。<br>它会选择一个物理页(如PP4)，作为牺牲页，将该页的内容刷新到磁盘文件。然后，把VP3映射的磁盘文件，缓存到该物理页。<br>页表中的第3条，有效位变1，同时，物理页号表号变为PP4。<br>3)缺页异常处理完毕后，返回中断前的指令，重新执行，此时缓存命中，执行1)<br>4)将找到的内容映射到高速缓存，CPU从高速缓存中获取该值，结束。</p>
+<p><a href="https://www.cnblogs.com/shijingjing07/p/5611579.html" target="_blank" rel="noopener">参考文献</a></p>
 <h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h4 id="网络层数"><a href="#网络层数" class="headerlink" title="网络层数"></a>网络层数</h4><ol>
 <li><p>七层</p>
 <p>指OSI七层协议模型，主要是：应用层（Application）、表示层（Presentation）、会话层（Session）、传输层（Transport）、网络层（Network）、数据链路层（Data Link）、物理层（Physical）。</p>
@@ -452,12 +546,10 @@
 <li>nohup 无疑是我们首先想到的办法。顾名思义，nohup 的用途就是让提交的命令忽略 hangup 信号。</li>
 <li>nohup 无疑能通过忽略 HUP 信号来使我们的进程避免中途被中断，但如果我们换个角度思考，如果我们的进程不属于接受 HUP 信号的终端的子进程，那么自然也就不会受到 HUP 信号的影响了。setsid 就能帮助我们做到这一点。</li>
 </ol>
-<p>#### </p>
-<h4 id="tcp-ip状态转换图"><a href="#tcp-ip状态转换图" class="headerlink" title="tcp/ip状态转换图"></a>tcp/ip状态转换图</h4><p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567048452184.png" alt="1567048452184"></p>
+<h4 id="输入一个url后发生了哪些过程"><a href="#输入一个url后发生了哪些过程" class="headerlink" title="输入一个url后发生了哪些过程"></a>输入一个url后发生了哪些过程</h4><h4 id="tcp-ip状态转换图"><a href="#tcp-ip状态转换图" class="headerlink" title="tcp/ip状态转换图"></a>tcp/ip状态转换图</h4><p><img src="/2019/07/20/面经/tcp状态转换图.png" width="100%" height="60%"></p>
 <p>​        CLOSED：表示初始状态。对服务端和C客户端双方都一样。<br>​        LISTEN：表示监听状态。服务端调用了listen函数，可以开始accept连接了。<br>​        SYN_SENT：表示客户端已经发送了SYN报文。当客户端调用connect函数发起连接时，首先发SYN给服务端，然后自己进入SYN_SENT状态，并等待服务端发送ACK+SYN。<br>​        SYN_RCVD：表示服务端收到客户端发送SYN报文。服务端收到这个报文后，进入SYN_RCVD状态，然后发送ACK+SYN给客户端。<br>​        ESTABLISHED：表示连接已经建立成功了。服务端发送完ACK+SYN后进入该状态，客户端收到ACK后也进入该状态。<br>​        FIN_WAIT_1：表示主动关闭连接。无论哪方调用close函数发送FIN报文都会进入这个这个状态。<br>​        FIN_WAIT_2：表示被动关闭方同意关闭连接。主动关闭连接方收到被动关闭方返回的ACK后，会进入该状态。<br>​        TIME_WAIT：表示收到对方的FIN报文并发送了ACK报文，就等2MSL后即可回到CLOSED状态了。如果FIN_WAIT_1状态下，收到对方同时带FIN标志和ACK标志的报文时，可以直接进入TIME_WAIT状态，而无须经过FIN_WAIT_2状态。<br>​        CLOSING：表示双方同时关闭连接。如果双方几乎同时调用close函数，那么会出现双方同时发送FIN报文的情况，此时就会出现CLOSING状态，表示双方都在关闭连接。<br>​        CLOSE_WAIT：表示被动关闭方等待关闭。当收到对方调用close函数发送的FIN报文时，回应对方ACK报文，此时进入CLOSE_WAIT状态。<br>​        LAST_ACK：表示被动关闭方发送FIN报文后，等待对方的ACK报文状态，当收到ACK后进入CLOSED状态。</p>
-<h4 id="三次握手和四次挥手-amp-amp-time-wait"><a href="#三次握手和四次挥手-amp-amp-time-wait" class="headerlink" title="三次握手和四次挥手 &amp;&amp; time_wait"></a>三次握手和四次挥手 &amp;&amp; time_wait</h4><p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567048536926.png" alt="1567048536926"></p>
-<p> <img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567048757704.png" alt="1567048757704"></p>
-<p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567048818400.png" alt="1567048818400"></p>
+<h4 id="三次握手和四次挥手-amp-amp-time-wait"><a href="#三次握手和四次挥手-amp-amp-time-wait" class="headerlink" title="三次握手和四次挥手 &amp;&amp; time_wait"></a>三次握手和四次挥手 &amp;&amp; time_wait</h4><p><img src="/2019/07/20/面经/tcp协议.png" width="60%" height="60%"></p>
+<p><img src="/2019/07/20/面经/time_wait.png" width="100%" height="60%"></p>
 <p>————————————————<br>原文链接：<a href="https://blog.csdn.net/yusiguyuan/article/details/21445945" target="_blank" rel="noopener">https://blog.csdn.net/yusiguyuan/article/details/21445945</a></p>
 <h4 id="TCP发送缓冲区"><a href="#TCP发送缓冲区" class="headerlink" title="TCP发送缓冲区"></a><strong>TCP发送缓冲区</strong></h4><p>每个TCP套接字有一个发送缓冲区，我们可以用SO_SNDBUF套接字选项来更改该缓冲区的大小。当某个应用进程调用write时， 内核从该应用进程的缓冲区复制所有数据到缩写套接字的发送缓冲区。</p>
 <p>如果该套接字的发送缓冲区容不下该应用进程的所有数据（或是应用进程的缓冲区大于套接字 的发送缓冲区，或是套接字的发送缓冲区中已有其他数据），该应用进程将被投入睡眠。这里假设该套接字是阻塞的，它通常是默认设置。</p>
@@ -467,20 +559,61 @@
 <p>select，poll，epoll都是IO多路复用的机制。I/O多路复用就通过一种机制，可以监视多个描述符，一旦某个描述符就绪（一般是读就绪或者写就绪），能够通知程序进行相应的读写操作。</p>
 <h4 id="大小端模式"><a href="#大小端模式" class="headerlink" title="大小端模式"></a>大小端模式</h4><p>大端： 数据的低位存在内存空间的高地址上。</p>
 <p>小端：数据的高位存在内存空间的高地址上。</p>
+<p>我们的 PC 机上使用的是 X86 结构的 CPU，它是小端模式；51 单片机是大端模式；很多 ARM、DSP 也是小端模式（部分 ARM 处理器还可以由硬件来选择是大端模式还是小端模式）。</p>
 <p>eg：int a= 0x12345678;</p>
-<p>大端</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">内存地址 0x4000 0x4001 0x4002 0x4003 </span><br><span class="line">存放内容 0x78 0x56 0x34 0x12</span><br></pre></td></tr></table></figure>
 <p>小端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">内存地址 0x4000 0x4001 0x4002 0x4003 </span><br><span class="line">存放内容 0x78 0x56 0x34 0x12</span><br></pre></td></tr></table></figure>
+<p>大端</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">内存地址 0x4000 0x4001 0x4002 0x4003 </span><br><span class="line">存放内容 0x12 0x34 0x56 0x78</span><br></pre></td></tr></table></figure>
 <p>大小端的检验：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">union</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">    &#125; data;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(data.ch == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Little-endian\n"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Big-endian\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">union</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">    &#125; data;</span><br><span class="line">	data.n=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(data.ch == <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Little-endian\n"</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Big-endian\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>联合体（公共体）是各个成员共用一段内存。1 是数据的低位，如果 1 被存储在 data 的低字节，就是小端模式，这个时候 data.ch 的值也是 1。如果 1 被存储在 data 的高字节，就是大端模式，这个时候 data.ch 的值就是 0。</p>
 <h4 id="TCP与UDP区别"><a href="#TCP与UDP区别" class="headerlink" title="TCP与UDP区别"></a>TCP与UDP区别</h4><p>TCP基于有连接，UDP基于无连接。有连接就是TCP在传输前先发送连接请求和应答包，确定双方能够正常传输后，才开始进行数据传输。无连接就是UDP在发送数据之前，并不考虑对方能否接受到，甚至目的地址可能都是无效；</p>
 <p>TCP能保证可靠传输，UDP不能保证可靠传输TCP。所谓可靠就是TCP能保证把数据一定送到目的地址。为了实现可靠，TCP采用有连接的，超时重传，应答机制等。而UDP则没有这些，也不能保证数据一定能送到；</p>
 <p>TCP结构复杂，消耗资源多，建立过程较慢较复杂。UDP结构简单，消耗资源少，建立过程较快；</p>
-<p>TCP基于流模式，UDP是数据报模式。TCP把数据看成一连串无结构的字节流，没有边界，一段段传输构成了整个数据块。通过发送缓冲区和接受缓冲区来存储数据流。而UDP数据报模式，每一个数据报都是一个独立的对象，有着指定的大小。</p>
+<p>TCP基于<strong>流模式</strong>，UDP是<strong>数据报模式</strong>。TCP把数据看成一连串无结构的字节流，没有边界，一段段传输构成了整个数据块。通过发送缓冲区和接受缓冲区来存储数据流。而UDP数据报模式，每一个数据报都是一个独立的对象，有着指定的大小。</p>
 <p>TCP连接只能是点到点，而UDP可以一对一，一对多或者多对多。TCP只能是点到点原因很简单，因为TCP的传输前要先建立连接。因此，广播和多播只能采用UDP数据报的方式。</p>
 <p>TCP有确认，重传，拥赛控制机制，UDP在没有建立连接或者对方已经退出的情况下任然会继续发送数据，导致通信流量的浪费。<br> ————————————————<br>版权声明：本文为CSDN博主「oscarwin」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/shanghairuoxiao/article/details/68927070" target="_blank" rel="noopener">https://blog.csdn.net/shanghairuoxiao/article/details/68927070</a></p>
+<h4 id="长连接和短连接"><a href="#长连接和短连接" class="headerlink" title="长连接和短连接"></a>长连接和短连接</h4><p><strong>HTTP的长连接和短连接本质上是TCP长连接和短连接。</strong>HTTP属于应用层协议，在传输层使用TCP协议，在网络层使用IP协议。IP协议主要解决网络路由和寻址问题，TCP协议主要解决如何在IP层之上可靠的传递数据包，使在网络上的另一端收到发端发出的所有包，并且顺序与发出顺序一致。TCP有可靠，面向连接的特点。</p>
+<p><strong>HTTP协议是无状态的，指的是协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。</strong>也就是说，打开一个服务器上的网页和你之前打开这个服务器上的网页之间没有任何联系。HTTP是一个无状态的面向连接的协议，无状态不代表HTTP不能保持TCP连接，更不能代表HTTP使用的是UDP协议（无连接）。</p>
+<p><strong>在HTTP/1.0中，默认使用的是短连接。在HTTP/1.1中默认的是长连接</strong>。（使用长连接的HTTP协议，在响应头会加一句：Connection:keep-alive）</p>
+<p><strong>TCP短连接：</strong>我们模拟一下TCP短连接的情况，client向server发起连接请求，server接到请求，然后双方建立连接。client向server 发送消息，server回应client，然后一次读写就完成了，这时候双方任何一个都可以发起close操作，不过一般都是client先发起 close操作。为什么呢，一般的server不会回复完client后立即关闭连接的，当然不排除有特殊的情况。从上面的描述看，短连接一般只会在 client/server间传递一次读写操作</p>
+<p>优缺点：短连接<strong>对于服务器来说管理较为简单，存在的连接都是有用的连接，不需要额外的控制手段。但如果客户</strong>请求频繁<strong>，将在</strong>TCP的建立和关闭操作上浪费时间和带宽**。</p>
+<p><strong>TCP长连接： </strong>接下来我们再模拟一下长连接的情况，client向server发起连接，server接受client连接，双方建立连接。Client与server完成一次读写之后，它们之间的连接并不会主动关闭，后续的读写操作会继续使用这个连接。</p>
+<p>首先说一下TCP/IP详解上讲到的TCP保活功能，<strong>保活功能</strong>主要为服务器应用提供，服务器应用希望知道客户主机是否崩溃，从而可以代表客户使用资源。如果客户已经消失，使得服务器上保留一个半开放的连接，而服务器又在等待来自客户端的数据，则服务器将永远等待客户端的数据，保活功能就是试图在服务器端检测到这种半开放的连接。</p>
+<p>优缺点：<strong>长连接</strong>可以<strong>省去较多的TCP建立和关闭的操作，减少浪费，节约时间</strong>。</p>
+<p><strong>Client与server之间的连接如果一直不关闭的话，会存在一个问题，随着客户端连接越来越多，server早晚有扛不住的时候</strong></p>
+<h4 id="同步、异步、阻塞、非阻塞"><a href="#同步、异步、阻塞、非阻塞" class="headerlink" title="同步、异步、阻塞、非阻塞"></a>同步、异步、阻塞、非阻塞</h4><p><strong>阻塞调用</strong>是指调用结果返回之前，当前线程会被挂起，一直处于等待消息通知，不能够执行其他业务。函数只有在得到结果之后才会返回。</p>
+<p>同步，异步主要看关注的消息是如何通知的机制。</p>
+<p>同步的情况下，是由处理消息者自己去等待消息是否被触发，而异步的情况下是由触发机制来通知处理消息者同步。</p>
+<p>阻塞与非阻塞关注的是等待消息通知时的状态。阻塞就是干等，而非阻塞是去执行别的任务</p>
+<p>在异步机制中，处理消息者和触发机制之间就需要一个连接的桥梁，在异步消息处理中，往往会注册一个回调机制，在所等待事件被触发后，由触发机制找到相应的等待事件的程序。</p>
+<p>例子：小明下软件，如果他一直等下完了才离开，则是同步阻塞。他一边看下完没有，一边干别的事情，则是同步非阻塞（但是效率不高，要在两个不太的操作之间切换）。有了一个辅助下载工具，下完会叫。小明一直干等着下完，才离开，是异步阻塞 。小明建立下载任务之后，之间去干别的事情了，等到软件叫了，回来看一下文件下载情况，则是异步非阻塞。</p>
+<h4 id="IO多路复用技术-select、poll、epoll"><a href="#IO多路复用技术-select、poll、epoll" class="headerlink" title="IO多路复用技术 select、poll、epoll"></a>IO多路复用技术 select、poll、epoll</h4><p>目前支持IO多路复用的系统调用有select，poll，epoll，pselect。IO多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦描述符就绪，就通知程序进行相应的读写操作。</p>
+<p>他们本质上都是同步I/O。（读写过程是阻塞的）</p>
+<p><strong>select</strong>基本上市所有平台都支持，缺点在于：</p>
+<ol>
+<li>当个进程能够监视的描述符的数量是有限的，默认为1024；</li>
+</ol>
+<p>（select本质上是设置或者检查存放fd标志位的数据结构来进行下一步处理。）</p>
+<ol start="2">
+<li>对socket进行扫描时是线性扫描，轮询机制，效率低下。</li>
+<li>需要维护一个存放大量fd的数据结构，使得用户空间和内核空间在传递这个书结果时开销很大。</li>
+</ol>
+<p><strong>poll</strong></p>
+<p>poll和select本质上没有特别大的区别，都是将用户传递的数组拷贝到内核空间。然后查询每个fd对应的设备状态，如果设备就绪则在设备等待队列中加入一项并继续遍历，如果遍历完所有fd后没有发现就绪设备，则挂起当前进程，直到设备就绪或者主动超时，被唤醒后它又要再次遍历fd。这个过程经历了多次无谓的遍历。</p>
+<ol>
+<li>poll和select的区别在于它没有最大连接数的限制，因为使用的是链表的结构。</li>
+</ol>
+<p><code>2. poll还有一个特点是“水平触发”</code>，如果报告了fd后，没有被处理，那么下次poll时会再次报告该fd。</p>
+<p><strong>epoll </strong> </p>
+<p>epoll是poll和select的增强版，不受描述符的限制。epoll使用一个文件描述符管理多个描述符，将用户关系的文件描述符的事件存放到内核的一个事件表中，这样在用户空间和内核空间的copy只需一次。</p>
+<ol>
+<li>没有最大并发连接的限制。</li>
+<li>不是采用轮询机制，效率较高。<code>epoll使用“事件”的就绪通知方式</code>，通过epoll_ctl注册fd，<code>一旦该fd就绪，内核就会采用类似callback的回调机制来激活该fd</code>，epoll_wait便可以收到通知。</li>
+<li>消息传递的方式是：内核和用户空间共享一块内存来实现。</li>
+</ol>
+<p><a href="https://www.jianshu.com/p/aed6067eeac9" target="_blank" rel="noopener">参考文献</a></p>
 
       
 
@@ -1311,10 +1444,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
@@ -1323,11 +1452,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++、排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
             
             <div class="clearfix"></div>
