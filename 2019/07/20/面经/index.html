@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>面经 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="智能车刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；计算中线固定权值，改为根据速度变化的滑动权值等等 优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；  一些面试中的题目 TCP什么流      cookie和sess">
+  <meta name="description" content="智能车刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；计算中线固定权值，改为根据速度变化的滑动权值等等 优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；  一些面试中的题目 求 (x^n)%p,假设是存在一个1024bi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面经">
 <meta property="og:url" content="http://yoursite.com/2019/07/20/面经/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="智能车刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；计算中线固定权值，改为根据速度变化的滑动权值等等 优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；  一些面试中的题目 TCP什么流      cookie和sess">
+<meta property="og:description" content="智能车刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；计算中线固定权值，改为根据速度变化的滑动权值等等 优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；  一些面试中的题目 求 (x^n)%p,假设是存在一个1024bi">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/07/20/面经/C:/Users/Xuejiao%20Wang/AppData/Roaming/Typora/typora-user-images/1567053874345.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/20/面经/C:/Users/Xuejiao%20Wang/AppData/Roaming/Typora/typora-user-images/1567044362608.png">
@@ -26,10 +26,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/20/面经/tcp状态转换图.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/20/面经/tcp协议.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/20/面经/time_wait.png">
-<meta property="og:updated_time" content="2019-09-10T17:25:16.724Z">
+<meta property="og:updated_time" content="2019-09-19T10:05:16.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面经">
-<meta name="twitter:description" content="智能车刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；计算中线固定权值，改为根据速度变化的滑动权值等等 优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；  一些面试中的题目 TCP什么流      cookie和sess">
+<meta name="twitter:description" content="智能车刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；计算中线固定权值，改为根据速度变化的滑动权值等等 优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；  一些面试中的题目 求 (x^n)%p,假设是存在一个1024bi">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/20/面经/C:/Users/Xuejiao%20Wang/AppData/Roaming/Typora/typora-user-images/1567053874345.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -189,7 +189,13 @@
         <h2 id="智能车"><a href="#智能车" class="headerlink" title="智能车"></a>智能车</h2><p>刚开始巡线从中间往两边扫，后车容易把前车误判为障碍，后改为沿着上一次边线，小范围搜线，后车不处理障碍，仅前车处理障碍的方法解决；<br>测距刚开始用单发单收的激光测距，效果不理想，后改为红外光电管和超声波结合的方式；<br>计算中线固定权值，改为根据速度变化的滑动权值<br>等等</p>
 <p>优先级，从上到下分别为按键的中断，场中断；DMA中断，串口接受中断；</p>
 <p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567053874345.png" alt="1567053874345"></p>
-<h2 id="一些面试中的题目"><a href="#一些面试中的题目" class="headerlink" title="一些面试中的题目"></a>一些面试中的题目</h2><p> TCP什么流     </p>
+<h2 id="一些面试中的题目"><a href="#一些面试中的题目" class="headerlink" title="一些面试中的题目"></a>一些面试中的题目</h2><ol>
+<li>求 (x^n)%p,假设是存在一个1024bit的数据类型， x,n,p都是1024bit的。给你一个2G的CPU，1M的内存，怎么求 (x^n)%p 。</li>
+</ol>
+<ol start="2">
+<li>给定1T的数据，是一系列用户的id数据，找出出现次数最多的1000个，只有1G的内存，怎么办？</li>
+</ol>
+<p> TCP什么流     </p>
 <p>cookie和session的区别</p>
 <p>HTTP报文结构</p>
 <p>状态码</p>
@@ -199,13 +205,13 @@
 <p>b+和红黑树的区别</p>
 <p>拥塞控制知道吗？是什么？怎么实现？拥塞窗口？是叫拥塞窗口吗？</p>
 <p>啥叫面向连接？</p>
-<p>APR协议  RPC协议</p>
+<p>ARP协议  RPC协议</p>
 <p>OSI七层是哪七层，交换机在哪一层</p>
 <p>多路复用</p>
 <p>01背包 完全背包，两种动态规划经典例题</p>
 <p>vector 与 list 、dueue的区别</p>
 <p><a href="https://blog.csdn.net/qq_32164245/article/details/80518717" target="_blank" rel="noopener">https://blog.csdn.net/qq_32164245/article/details/80518717</a></p>
-<h2 id="C-相关知识"><a href="#C-相关知识" class="headerlink" title="C++相关知识"></a>C++相关知识</h2><p>sizeof 是在编译时确定的。例如：memset（dp, 0，sizeof dp）;在一定程度上可以认为sizeof dp 是常量。</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h4 id="数据表中所有字段都是不可分割的原子值？"><a href="#数据表中所有字段都是不可分割的原子值？" class="headerlink" title="数据表中所有字段都是不可分割的原子值？"></a>数据表中所有字段都是不可分割的原子值？</h4><h2 id="C-相关知识"><a href="#C-相关知识" class="headerlink" title="C++相关知识"></a>C++相关知识</h2><p>sizeof 是在编译时确定的。例如：memset（dp, 0，sizeof dp）;在一定程度上可以认为sizeof dp 是常量。</p>
 <h4 id="指针和引用的区别："><a href="#指针和引用的区别：" class="headerlink" title="指针和引用的区别："></a>指针和引用的区别：</h4><ol>
 <li><p>指针是指向地址，而引用是某个变量的别名。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>, b = <span class="number">2</span>;;</span><br><span class="line"><span class="keyword">int</span> &amp;pa = a;</span><br><span class="line">pa = b;       <span class="comment">//此时 a=2,b=2,pa=2;这就是别名的意思</span></span><br></pre></td></tr></table></figure>
@@ -227,7 +233,8 @@
 <li><p>执行++操作时不一样。</p>
 </li>
 </ol>
-<h4 id="高效使用vector"><a href="#高效使用vector" class="headerlink" title="高效使用vector/"></a><a href="http://senlinzhan.github.io/2015/03/31/C-使用vector的正确姿势/" target="_blank" rel="noopener">高效使用vector/</a></h4><h4 id="C和C-的区别"><a href="#C和C-的区别" class="headerlink" title="C和C++的区别"></a><strong>C和C++的区别</strong></h4><ol>
+<h4 id="高效使用vector"><a href="#高效使用vector" class="headerlink" title="高效使用vector/"></a><a href="http://senlinzhan.github.io/2015/03/31/C-使用vector的正确姿势/" target="_blank" rel="noopener">高效使用vector/</a></h4><p>sort(,) 是从小到大排序。</p>
+<h4 id="C和C-的区别"><a href="#C和C-的区别" class="headerlink" title="C和C++的区别"></a><strong>C和C++的区别</strong></h4><ol>
 <li><p>c时面向过程的编程，而c++时面向对象的编程。</p>
 </li>
 <li><p>主要区别是C++具有封装、继承、多态三种特性；</p>
@@ -320,7 +327,8 @@
 </li>
 </ol>
 <p>   new和new[]的区别，new[]一次分配所有内存，多次调用构造函数，分别搭配使用delete和delete[]，同理，delete[]多次调用析构函数，销毁数组中的每个对象。 </p>
-<h4 id="各个数据结构的大小"><a href="#各个数据结构的大小" class="headerlink" title="各个数据结构的大小"></a>各个数据结构的大小</h4><p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567044362608.png" alt="1567044362608"></p>
+<h4 id="各个数据结构的大小"><a href="#各个数据结构的大小" class="headerlink" title="各个数据结构的大小"></a>各个数据结构的大小</h4><p>在32位和64位的系统中，只有long ，unsigned long，指针变量字节会发生变化，都是从4byte变成8byte。 </p>
+<p><img src="/2019/07/20/面经/C:/Users/Xuejiao Wang/AppData/Roaming/Typora/typora-user-images/1567044362608.png" alt="1567044362608"></p>
 <h4 id="函数A调用函数B，发生了什么？"><a href="#函数A调用函数B，发生了什么？" class="headerlink" title="函数A调用函数B，发生了什么？"></a>函数A调用函数B，发生了什么？</h4><p>1、函数的运行都是在栈上开辟内存。</p>
 <p>2、栈是通过esp（栈顶指针）、ebp（栈底指针）两个指针来标识的。</p>
 <p>3、对于栈上的访问都是通过栈底指针的偏移来访问的。</p>
@@ -721,6 +729,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/21/美术PPt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          美术PPt
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/07/12/Linux-关于防火墙与端口的配置/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Linux 关于防火墙ufw与端口的配置</div>
@@ -849,15 +866,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C语言 JSON解析器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -869,7 +890,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color3">美术</a>
               </li>
             
             <div class="clearfix"></div>
